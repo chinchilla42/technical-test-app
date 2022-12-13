@@ -1,0 +1,8 @@
+.btn-primary {
+    background-color: $primary;
+    color: $gray-100;
+    border-radius: $radius-mini;
+    &:hover {
+        background-color: $primary-accent;
+    }
+}
