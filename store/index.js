@@ -30,10 +30,16 @@ export default () => new Vuex.Store({
             return state.listOfItems.length
         }
   },
-//   mutations: {
-//   },
-//   actions: {
-//   },
+  mutations: {
+    ADD_ITEM(state, payload){
+        state.listOfItems = state.listOfItems.concat(payload.data);
+    }
+  },
+  actions: {
+    addNewItem({ commit }, payload){
+        commit("ADD_ITEM", payload);
+    }
+  },
 //   modules: {
 //   }
 })

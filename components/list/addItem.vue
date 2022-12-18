@@ -39,6 +39,13 @@ export default {
         addPage(e)
         {
             e.preventDefault()
+            this.$store.dispatch('addNewItem', {
+                data: {
+                    pageName: this.fields.name,
+                    slug: this.fields.slug
+                }
+            });
+            event.target.reset();
             console.log(this.fields.name);
             console.log(this.fields.slug);
         }
