@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form v-on:submit="addPage">
         <h3>Ajouter une page</h3>
         <div>
             <label>Nom :</label>
@@ -35,6 +35,13 @@ export default {
             }
         }
     },
-    methods: {}
+    methods: {
+        addPage(e)
+        {
+            e.preventDefault()
+            console.log(this.fields.name);
+            console.log(this.fields.slug);
+        }
+    }
 }
 </script>

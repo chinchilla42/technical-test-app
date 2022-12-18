@@ -2,36 +2,25 @@
     <div>
         <h3>Liste de pages</h3>
         <ul>
-            <Item v-for="item in items" :key="item.slug" :item="item" />
+            <!-- <Link v-for="item in listOfItems" :key="item.slug"/> -->
+            <Link v-for="item in listOfItems" :pageName="item.pageName" :slug="item.slug" :key="item.slug"/>
         </ul>
     </div>
 </template>
 
 <script>
-import Item from '@/components/list/item'
+import Link from '@/components/list/link'
+import { mapState } from 'vuex'
 
 export default {
-    components: { Item },
+    components: { Link },
+    computed : {
+        ...mapState({
+            listOfItems: "listOfItems"
+        })
+    },
     data () {
         return {
-            items: [
-                {
-                    name: "Maliki",
-                    slug: "maliki"
-                },
-                {
-                    name: "Thinkerview",
-                    slug: "thinkerview"
-                },
-                {
-                    name: "Yatuu",
-                    slug: "yatuu"
-                },
-                {
-                    name: "François Theurel",
-                    slug: "francois-theurel"
-                },
-            ]
         }
     }
 }
