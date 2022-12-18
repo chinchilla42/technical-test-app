@@ -5,8 +5,6 @@ Vue.use(Vuex)
 
 export default () => new Vuex.Store({
     state: () => ({
-        numberOfPages: 0,
-        
         listOfItems: [
             {
                 pageName: "Maliki",
@@ -27,11 +25,11 @@ export default () => new Vuex.Store({
         ]
 
     }),
-  getters: () => ({
-        getList(state){
-            return `${state.numberOfPages}`
+  getters: {
+        getNumberOfItems(state){
+            return state.listOfItems.length
         }
-  }),
+  },
 //   mutations: {
 //   },
 //   actions: {
